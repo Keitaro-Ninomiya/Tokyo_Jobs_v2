@@ -72,3 +72,65 @@ def Test(Dict):
     if Dict=={}:
         Dict['Office']=list([{"Position":'NoPosition',"Location":[1500,100]}])
     return(Dict)
+
+
+import pandas as pd
+def Convert2(PageNum,Office,Posi,Table,Names):
+    Data=pd.DataFrame(columns=['Page','Office','Posi','Name','Total'])
+    Total=len(Table)
+    if Posi in list(['書記','技手']):
+        for Name in Names:        
+            NewData=pd.DataFrame({'Page':[PageNum],'Office':[Office],'Posi':Posi,'Name':[Name],'Total':2*Total})            
+            Data=pd.concat([Data,NewData])
+    
+    if Posi =='雇':
+        for Name in Names:        
+            NewData=pd.DataFrame({'Page':[PageNum],'Office':[Office],'Posi':Posi,'Name':[Name],'Total':3*Total})            
+            Data=pd.concat([Data,NewData])
+    
+    if Posi in list(['主事','技師']):
+        for Name in Names:        
+            NewData=pd.DataFrame({'Page':[PageNum],'Office':[Office],'Posi':Posi,'Name':[Name],'Total':1*Total})            
+            Data=pd.concat([Data,NewData])
+            
+    return(Data)
+
+def Convert(PageNum,Office,Posi,Page,Table,Names):
+    Data=pd.DataFrame(columns=['Page','Office','Posi','Name','Total'])
+    Total=len(Table)
+    if Posi in list(['書記','技手']):
+        for Line in Table:
+            LineNum=list(Line.keys())[0]
+            Wage1=''.join([d['description'] for d in Line[PageNum]['Wage1']])
+            Name1=''.join([d['description'] for d in Line[PageNum]['Name1']])
+            Data1=pd.DataFrame({'Page':[Page],'Office':[Office],'Posi':Posi,'Name':[Name1],'Wage':[Wage1],'Total':2*Total})
+            
+            Wage2=''.join([d['description'] for d in Line[PageNum]['Wage2']])
+            Name2=''.join([d['description'] for d in Line[PageNum]['Name2']])
+            Data2=pd.DataFrame({'Page':[Page],'Office':Office,'Posi':Posi,'Name':[Name2],'Wage':[Wage2],'Total':2*Total})
+            
+            Data=pd.concat([Data,Data1,Data2])
+    
+    if Posi =='雇':
+        for Line in Table:
+            PageNum=list(Line.keys())[0]
+            Name1=''.join([d['description'] for d in Line[PageNum]['Name1']])
+            Data1=pd.DataFrame({'Page':[Page],'Office':[Office],'Posi':[Posi],'Name':[Name1],'Wage':['NA'],'Total':3*Total})
+            
+            Name2=''.join([d['description'] for d in Line[PageNum]['Name2']])
+            Data2=pd.DataFrame({'Page':[Page],'Office':[Office],'Posi':[Posi],'Name':[Name2],'Wage':['NA'],'Total':3*Total})
+    
+            Name3=''.join([d['description'] for d in Line[PageNum]['Name3']])
+            Data3=pd.DataFrame({'Page':[Page],'Office':[Office],'Posi':[Posi],'Name':[Name3],'Wage':['NA'],'Total':3*Total})
+    
+            Data=pd.concat([Data,Data1,Data2,Data3])
+    
+    if Posi in list(['主事','技師']):
+        for Line in Table:
+            PageNum=list(Line.keys())[0]
+            Wage1=''.join([d['description'] for d in Line[PageNum]['Wage1']])
+            Name1=''.join([d['description'] for d in Line[PageNum]['Name1']])
+            Data1=pd.DataFrame({'Page':[Page],'Office':[Office],'Posi':Posi,'Name':[Name1],'Wage':[Wage1],'Total':Total})
+    
+            Data=pd.concat([Data,Data1])
+    return(Data)
