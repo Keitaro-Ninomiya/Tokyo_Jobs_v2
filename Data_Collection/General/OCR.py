@@ -1,8 +1,11 @@
 import requests, uuid, time,json,base64
 import json, os, cv2,pandas as pd
 
-def Clova(origin,Page,api_url,secret_key):    
-    file_path=origin+'Tokyo_Jobs/Raw_Data/Metropolitan_DA/1942/HQ/Page'+'{:03d}'.format(Page)+'.jpg'
+def Clova(origin,Page,api_url,secret_key,Year,Quality):        
+    file_path=origin+'Tokyo_Jobs/Raw_Data/Metropolitan_DA/'+str(Year)+'/'+Quality+'/Page'+'{:03d}'.format(Page)+'.jpg'
+    if os.path.exists(file_path)==False:
+        file_path=origin+'Tokyo_Jobs/Raw_Data/Metropolitan_DA/'+str(Year)+'/'+Quality+'/Page'+'{:03d}'.format(Page)+'.png'
+    
     with open(file_path,'rb') as f:
         file_data = f.read()
     request_json = {
