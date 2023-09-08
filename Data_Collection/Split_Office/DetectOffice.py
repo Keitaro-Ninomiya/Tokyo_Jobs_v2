@@ -84,8 +84,10 @@ def DetectOffice(Box, Office,VertPoint,Circle='Off'):
             TopDict=[d for d in Dict if (d['Box']['bounding_poly'].vertices[0].y<=VertPoint-50)]
             BtmDict=[d for d in Dict if (VertPoint<=d['Box']['bounding_poly'].vertices[0].y)]
             BtmDict=[d for d in BtmDict if (d['Box']['bounding_poly'].vertices[0].y<=VertPoint+250)]
-            Dict=TopDict+BtmDict
-            if len(Dict)>1:
+            FinDict=TopDict+BtmDict
+            if len(FinDict)>=1:
+                Dict=FinDict[0]
+            if len(FinDict)==0:
                 Dict=Dict[0]
             Dict['OfficeName']=Office
             return(Dict)
