@@ -6,10 +6,12 @@ Step 2. Access high-resolution images by obtaining credential info from E-mail.
 
 > Data_Collection/Download_Image/ExtractFromEmail.ipynb
 
-Step 3. Crop images using a layout detection network. Split the image into pages or quadrants.
+Step 3. Crop images using a layout detection network. Split the image into pages or quadrants. Move images into Google Drive.
+
+> Data_Collection/Download_Image/ExtractFromEmail.ipynb
 
 Step 4. Apply NDLOCR to each crop.
 
-Step 5. Detect columns and seperate into positions/offices.
+Step 5. Detect columns and seperate them into positions/offices.
 
 Step 6. Get names and position by NLP.
