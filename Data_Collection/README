@@ -10,6 +10,8 @@ Step 3. Crop images using a layout detection network. Split the image into pages
 
 > Data_Collection/Extract_Data/LayoutDetection.ipynb
 
+> Data_Collection/MoveFilesToGDrive.ipynb
+
 Step 4. Apply NDLOCR to each crop.
 
 > Data_Collection/NDLOCR/WorkingCopy_NDL_OCR.ipynb
