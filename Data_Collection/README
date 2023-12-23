@@ -16,6 +16,8 @@ Step 4. Apply NDLOCR to each crop. Move files into Box storage.
 
 > Data_Collection/NDLOCR/WorkingCopy_NDL_OCR.ipynb
 
+> Data_Collection/NDLOCR/OrganizeFiles.py
+
 Step 5. Detect columns and seperate them into positions/offices.
 
 > Data_Collection/Download_Image/ExtractFromEmail.ipynb
