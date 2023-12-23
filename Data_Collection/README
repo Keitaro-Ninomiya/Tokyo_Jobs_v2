@@ -1,6 +1,6 @@
 Step 1. Apply for high-resolution images from Metropolitan Archival records.
 
-Data_Collection/Download_Image/ExtractFromEmail.ipynb
+> Data_Collection/Download_Image/ExtractFromEmail.ipynb
 
 Step 2. Access high-resolution images by obtaining credential info from E-mail.
 
