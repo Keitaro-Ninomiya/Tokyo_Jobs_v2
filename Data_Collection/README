@@ -6,6 +6,8 @@ Step 2. Access high-resolution images by obtaining credential info from E-mail.
 
 > Data_Collection/Download_Image/ExtractFromEmail.ipynb
 
+> Data_Collection/Download_Image/ChangeFileNames.ipynb
+
 Step 3. Crop images using a layout detection network. Split the image into pages or quadrants. Move images into Google Drive.
 
 > Data_Collection/Extract_Data/LayoutDetection.ipynb
