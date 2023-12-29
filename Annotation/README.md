@@ -10,4 +10,5 @@ Step 2. Align by columns and draw bounding boxes.
 
 Step 3. Store image and bounding box into folders.
 
+> C:\Users\Keitaro Ninomiya\Box\Research Notes (keitaro2@illinois.edu)\Tokyo_Jobs\SortFiles\MoveFromGDriveToBox.ipynb
 > C:\Users\Keitaro Ninomiya\Box\Research Notes (keitaro2@illinois.edu)\Tokyo_Jobs\Annotation\CreateAnnotation.ipynb
