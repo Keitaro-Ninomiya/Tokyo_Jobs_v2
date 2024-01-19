@@ -4,3 +4,6 @@
 # But not these files...
 !/Annotation/
 !/Data_Collection/
+
+__pycache__/
+*.pyc
